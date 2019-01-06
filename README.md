@@ -36,17 +36,34 @@ brew cask install 1password appcleaner docker dropbox firefox franz google-chrom
 
 ```sh
 # may not need lua and n
-$ brew install awscli git lua mysql node n redis
+$ brew install awscli git lua mysql node n redis pyenv
 $ npm i -g eslint
 $ sudo easy_install pip # if necessary
-$ pip install glances
+$ pip install glances # I think this may have been for htop
 $ pip install --upgrade pip
 $ pip install --upgrade setuptools
 ```
 
 #
 
-##### [Install and configure pyenv](https://github.com/pyenv/pyenv)
+##### [Setup git-open with ZSH](https://github.com/paulirish/git-open#oh-my-zsh)
+
+1. `git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open`
+2. Add `git-open` to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... git-open)`
+
+#
+
+##### [Add pyenv plugin to ZSH](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pyenv/pyenv.plugin.zsh)
+
+\*Assumes pyenv is already installed via brew
+
+1. Add `pyenv` to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... pyenv)`
+
+2. Restart your shell so the path changes take effect
+
+```sh
+$ exec "$SHELL"
+```
 
 #
 
