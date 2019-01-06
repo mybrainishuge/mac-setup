@@ -224,15 +224,16 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 1. Open preferences: `command` + `,`
 2. Select _Appearance_
-3. Uncheck _Show per-pane title bar with split panes_
-4. Check _Auto-hide menu bar on non-native fullscreen_
-5. Check _Dimming affects only text, not background_
-6. Set dimming amount to _Very Dim_
-7. Check _Dim inactive split panes_ & uncheck _Dim background windows_
-8. Select _Profiles_
-9. Select _Colors_
-10. Select _Color Presets..._ dropdown
-11. Select _Import..._ and choose custom "perfect" presets
+3. Change Tab theme to _Dark_
+4. Uncheck _Show per-pane title bar with split panes_
+5. Check _Auto-hide menu bar on non-native fullscreen_
+6. Check _Dimming affects only text, not background_
+7. Set dimming amount to _Very Dim_
+8. Uncheck _Dim inactive split panes_ & _Dim background windows_
+9. Select _Profiles_
+10. Select _Colors_
+11. Select _Color Presets..._ dropdown
+12. Select _Import..._ and choose custom "perfect" presets
 
 #
 
