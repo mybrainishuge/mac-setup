@@ -113,6 +113,11 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 4. Add a descriptive title and paste key into the "Key" field.
 5. Click Add SSH key.
 6. May need to quit and reopen terminal.
+7. May need to generate personal access token
+   - From profile, click _Developer settings_
+   - Click _Personal access tokens_
+   - Click _command_line_access_
+   - Click _Regenerate token_
 
 #
 
