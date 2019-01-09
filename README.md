@@ -103,7 +103,7 @@ $ git config --global credential.helper osxkeychain
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 $ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/github
+$ ssh-add -K ~/.ssh/id_rsa
 $ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
