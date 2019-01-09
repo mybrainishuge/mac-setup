@@ -1,17 +1,17 @@
 # **Mac Config**
 
-##### Install [Oh My Zsh](http://ohmyz.sh/)
-
-```sh
-$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-#
-
 ##### Install [Homebrew](http://brew.sh/)
 
 ```sh
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+#
+
+##### Install [Oh My Zsh](http://ohmyz.sh/)
+
+```sh
+$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 #
@@ -116,7 +116,7 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 #
 
-##### Set VS Code as the [`git` Mergetool](https://code.visualstudio.com/docs/editor/versioncontrol#_git-patchdiff-mode):
+##### Set VS Code as the [`git` Mergetool](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor):
 
 ```sh
 $ git config --global core.editor "code --wait"
@@ -159,6 +159,10 @@ $ git mergetool -y
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
 - [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+
+#
+
+##### [Launch VS Code from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
 
 #
 
