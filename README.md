@@ -1,6 +1,6 @@
 # **Mac Config**
 
-##### Install [Homebrew](http://brew.sh/)
+#### Install [Homebrew](http://brew.sh/)
 
 ```sh
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -8,7 +8,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 #
 
-##### Install [Oh My Zsh](http://ohmyz.sh/)
+#### Install [Oh My Zsh](http://ohmyz.sh/)
 
 ```sh
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -16,13 +16,13 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 #
 
-##### Install Xcode
+#### Install Xcode
 
 - Install Xcode from the App Store
 
 #
 
-##### Install desktop applications:
+#### Install desktop applications:
 
 ```sh
 brew cask install 1password appcleaner docker dropbox firefox franz google-chrome iterm2 onyx postman sequel-pro skitch spotify sublime-text visual-studio-code zoomus
@@ -32,7 +32,7 @@ brew cask install 1password appcleaner docker dropbox firefox franz google-chrom
 
 #
 
-##### Install terminal utilities:
+#### Install terminal utilities:
 
 ```sh
 # may not need lua and n
@@ -46,16 +46,16 @@ $ pip install --upgrade setuptools
 
 #
 
-##### [Setup git-open with ZSH](https://github.com/paulirish/git-open#oh-my-zsh)
+#### [Setup git-open with ZSH](https://github.com/paulirish/git-open#oh-my-zsh)
 
 1. `git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open`
 2. Add `git-open` to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... git-open)`
 
 #
 
-##### [Add pyenv plugin to ZSH](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pyenv/pyenv.plugin.zsh)
+#### [Add pyenv plugin to ZSH](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/pyenv/pyenv.plugin.zsh)
 
-\*Assumes pyenv is already installed via brew
+\*Assumes `pyenv` is already installed via `brew`
 
 1. Add `pyenv` to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... pyenv)`
 
@@ -67,7 +67,21 @@ $ exec "$SHELL"
 
 #
 
-##### Set directory ownership for `n`
+#### Fix zlib error when installing Python versions using pyenv
+
+On macOS Mojave, pyenv throws an error when trying to install new Python versions:
+
+```sh
+zipimport.ZipImportError: can't decompress data; zlib not available
+```
+
+- [pyenv wiki](https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib)
+- [Stack Overflow](https://stackoverflow.com/questions/50036091/pyenv-zlib-error-on-macos)
+- [GitHub Issue](https://github.com/pyenv/pyenv/issues/1219)
+
+#
+
+#### Set directory ownership for `n`
 
 ```sh
 $ sudo chown -R richard /usr/local/n
@@ -79,7 +93,7 @@ $ sudo chown -R richard /usr/local/share
 
 #
 
-##### Switch terminal to use `git` installed by `brew`
+#### Switch terminal to use `git` installed by `brew`
 
 ```sh
 export PATH=/usr/local/bin:$PATH
@@ -87,7 +101,7 @@ export PATH=/usr/local/bin:$PATH
 
 #
 
-##### Configure `git`:
+#### Configure `git`:
 
 ```sh
 $ git config --global user.name "Your Name Here"
@@ -98,7 +112,7 @@ $ git config --global credential.helper osxkeychain
 
 #
 
-##### [Generate SSH Key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) and [Add to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/):
+#### [Generate SSH Key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) and [Add to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/):
 
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -121,7 +135,7 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 #
 
-##### Set VS Code as the [`git` Mergetool](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor):
+#### Set VS Code as the [`git` Mergetool](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor):
 
 ```sh
 $ git config --global core.editor "code --wait"
@@ -137,7 +151,7 @@ $ git config --global -e
 
 #
 
-##### Set Sublime Text as the `git` Mergetool:
+#### Set Sublime Text as the `git` Mergetool:
 
 ```sh
 $ git config --global mergetool.sublime.cmd "subl -w \$MERGED"
@@ -148,7 +162,7 @@ $ git mergetool -y
 
 #
 
-##### Install Visual Studio Code Extensions
+#### Install Visual Studio Code Extensions
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Extensions view keyboard shortcut: `command` + `shift` + `x`_
 
@@ -167,11 +181,11 @@ $ git mergetool -y
 
 #
 
-##### [Launch VS Code from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+#### [Launch VS Code from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
 
 #
 
-##### Configure Sublime Text to be [launched from terminal](https://www.sublimetext.com/docs/3/osx_command_line.html):
+#### Configure Sublime Text to be [launched from terminal](https://www.sublimetext.com/docs/3/osx_command_line.html):
 
 ```sh
 # No longer necessary as Sublime Text handles this automatically
@@ -180,7 +194,7 @@ $ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/loc
 
 #
 
-##### Install [Package Control](https://packagecontrol.io/installation) in Sublime Text
+#### Install [Package Control](https://packagecontrol.io/installation) in Sublime Text
 
 1. Open the Sublime console via the `ctrl` + `` ` `` shortcut
 2. Submit the following into the console:
@@ -191,7 +205,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
-##### Install Sublime Text Packages
+#### Install Sublime Text Packages
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Package Control keyboard shortcut: `command` + `shift` + `p`_
 
@@ -206,7 +220,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
-##### Sublime Text User Preferences:
+#### Sublime Text User Preferences:
 
 ```sh
 {
@@ -235,7 +249,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
-##### Sublime Text User Key Bindings:
+#### Sublime Text User Key Bindings:
 
 ```sh
 [
@@ -246,7 +260,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
-##### Configure iTerm
+#### Configure iTerm
 
 1. Open preferences: `command` + `,`
 2. Select _Appearance_
@@ -263,7 +277,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
-##### macOS System Preferences
+#### macOS System Preferences
 
 - Enable Firewall and FileVault
 - Set keyboard key repeat to fastest and delay to shortest
