@@ -277,6 +277,24 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 #
 
+#### [Enable Touch ID for `sudo` in Terminal](https://gitlab.com/gnachman/iterm2/issues/7608)
+
+1. Add `auth sufficient pam_tid.so` to `etc/pam.d/sudo`
+
+```sh
+# sudo: auth account password session
+auth       sufficient     pam_tid.so
+auth       sufficient     pam_smartcard.so
+auth       required       pam_opendirectory.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_permit.so
+```
+
+2. Disable iTerms2 > Preferences > Advanced > Allow sessions to survive logging out and back in
+
+#
+
 #### macOS System Preferences
 
 - Enable Firewall and FileVault
