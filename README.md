@@ -2,31 +2,31 @@
 
 ## **Table of Contents**
 
-- [Install Homebrew](#install-homebrew)
-- [Install Oh My Zsh](#install-oh-my-zsh)
-- [Install Xcode](#install-xcode)
-- [Install desktop applications](#install-desktop-applications)
-  - [Fix Sequel Pro icon](#fix-sequel-pro-icon)
-- [Install terminal utilities](#install-terminal-utilities)
-- [Setup `git-open` with ZSH](#setup-git-open-with-zsh)
-- [Add `pyenv` plugin to ZSH](#add-pyenv-plugin-to-zsh)
-- [Fix zlib error when installing Python versions using `pyenv`](#fix-zlib-error-when-installing-python-versions-using-pyenv)
-- [Set directory ownership for `n`](#set-directory-ownership-for-n)
-- [Switch terminal to use `git` installed by `brew`](#switch-terminal-to-use-git-installed-by-brew)
-- [Configure `git`](#configure-git)
-- [Generate SSH Key and Add to GitHub](#generate-ssh-key-and-add-to-github)
-- [Set VS Code as the `git` Mergetool](#set-vs-code-as-the-git-mergetool)
-- [Set Sublime Text as the `git` Mergetool](#set-sublime-text-as-the-git-mergetool)
-- [Install Visual Studio Code Extensions](#install-visual-studio-code-extensions)
-- [Launch VS Code from the command line](#launch-vs-code-from-the-command-line)
-- [Configure Sublime Text to be launched from terminal](#configure-sublime-text-to-be-launched-from-terminal)
-- [Install Package Control in Sublime Text](#install-package-control-in-sublime-text)
-- [Install Sublime Text Packages](#install-sublime-text-packages)
-- [Sublime Text User Preferences](#sublime-text-user-preferences)
-- [Sublime Text User Key Bindings](#sublime-text-user-key-bindings)
-- [Configure iTerm](#configure-iterm)
-- [Enable Touch ID for `sudo` in Terminal](#enable-touch-id-for-sudo-in-terminal)
-- [macOS System Preferences](#macos-system-preferences)
+-   [Install Homebrew](#install-homebrew)
+-   [Install Oh My Zsh](#install-oh-my-zsh)
+-   [Install Xcode](#install-xcode)
+-   [Install desktop applications](#install-desktop-applications)
+    -   [Fix Sequel Pro icon](#fix-sequel-pro-icon)
+-   [Install terminal utilities](#install-terminal-utilities)
+-   [Setup `git-open` with ZSH](#setup-git-open-with-zsh)
+-   [Add `pyenv` plugin to ZSH](#add-pyenv-plugin-to-zsh)
+-   [Fix zlib error when installing Python versions using `pyenv`](#fix-zlib-error-when-installing-python-versions-using-pyenv)
+-   [Set directory ownership for `n`](#set-directory-ownership-for-n)
+-   [Switch terminal to use `git` installed by `brew`](#switch-terminal-to-use-git-installed-by-brew)
+-   [Configure `git`](#configure-git)
+-   [Generate SSH Key and Add to GitHub](#generate-ssh-key-and-add-to-github)
+-   [Set VS Code as the `git` Mergetool](#set-vs-code-as-the-git-mergetool)
+-   [Set Sublime Text as the `git` Mergetool](#set-sublime-text-as-the-git-mergetool)
+-   [Install Visual Studio Code Extensions](#install-visual-studio-code-extensions)
+-   [Launch VS Code from the command line](#launch-vs-code-from-the-command-line)
+-   [Configure Sublime Text to be launched from terminal](#configure-sublime-text-to-be-launched-from-terminal)
+-   [Install Package Control in Sublime Text](#install-package-control-in-sublime-text)
+-   [Install Sublime Text Packages](#install-sublime-text-packages)
+-   [Sublime Text User Preferences](#sublime-text-user-preferences)
+-   [Sublime Text User Key Bindings](#sublime-text-user-key-bindings)
+-   [Configure iTerm](#configure-iterm)
+-   [Enable Touch ID for `sudo` in Terminal](#enable-touch-id-for-sudo-in-terminal)
+-   [macOS System Preferences](#macos-system-preferences)
 
 #
 
@@ -48,7 +48,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 ### **Install Xcode**
 
-- Install Xcode from the App Store
+-   Install Xcode from the App Store
 
 #
 
@@ -58,18 +58,15 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 brew cask install 1password appcleaner docker dropbox firefox franz google-chrome iterm2 onyx postman sequel-pro skitch spotify sublime-text visual-studio-code zoomus
 ```
 
-- #### [Fix Sequel Pro icon](https://github.com/sequelpro/sequelpro/issues/2623#issuecomment-281234312)
+-   #### [Fix Sequel Pro icon](https://github.com/sequelpro/sequelpro/issues/2623#issuecomment-281234312)
 
 #
 
 ### **Install terminal utilities**
 
 ```sh
-# may not need lua and n
-$ brew install awscli git lua mysql node n redis pyenv
-$ npm i -g eslint
+$ brew install awscli git mysql node pyenv
 $ sudo easy_install pip # if necessary
-$ pip install glances # I think this may have been for htop
 $ pip install --upgrade pip
 $ pip install --upgrade setuptools
 ```
@@ -105,21 +102,9 @@ On macOS Mojave, pyenv throws an error when trying to install new Python version
 zipimport.ZipImportError: can't decompress data; zlib not available
 ```
 
-- [pyenv wiki](https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib)
-- [Stack Overflow](https://stackoverflow.com/questions/50036091/pyenv-zlib-error-on-macos)
-- [GitHub Issue](https://github.com/pyenv/pyenv/issues/1219)
-
-#
-
-### **Set directory ownership for `n`**
-
-```sh
-$ sudo chown -R richard /usr/local/n
-$ sudo chown -R richard /usr/local/include/node
-$ sudo chown -R richard /usr/local/lib/node_modules
-$ sudo chown -R richard /usr/local/lib/dtrace
-$ sudo chown -R richard /usr/local/share
-```
+-   [pyenv wiki](https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib)
+-   [Stack Overflow](https://stackoverflow.com/questions/50036091/pyenv-zlib-error-on-macos)
+-   [GitHub Issue](https://github.com/pyenv/pyenv/issues/1219)
 
 #
 
@@ -158,10 +143,10 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 5. Click Add SSH key.
 6. May need to quit and reopen terminal.
 7. May need to generate personal access token
-   - From profile, click _Developer settings_
-   - Click _Personal access tokens_
-   - Click _command_line_access_
-   - Click _Regenerate token_
+    - From profile, click _Developer settings_
+    - Click _Personal access tokens_
+    - Click _command_line_access_
+    - Click _Regenerate token_
 
 #
 
@@ -196,18 +181,15 @@ $ git mergetool -y
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Extensions view keyboard shortcut: `command` + `shift` + `x`_
 
-- [Gruvbox Theme](https://marketplace.visualstudio.com/items?itemName=jdinhlife.gruvbox) - Gruvbox dark hard theme
-- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
-- [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-- [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
-- [FontSize Shortcuts](https://marketplace.visualstudio.com/items?itemName=fosshaas.fontsize-shortcuts)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
-- [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
-- [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+-   [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+-   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+-   [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+-   [GraphQL for VSCode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode)
+-   [Gruvbox Theme](https://marketplace.visualstudio.com/items?itemName=jdinhlife.gruvbox) - Gruvbox dark hard theme
+-   [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
+-   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+-   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+-   [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
 #
 
@@ -239,14 +221,14 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Package Control keyboard shortcut: `command` + `shift` + `p`_
 
-- [Babel](http://babeljs.io/) - Syntax Definitions
-- [Bracket Highlighter](https://github.com/facelessuser/brackethighlighter)
-- [JSX](https://github.com/allanhortle/JSX) - Syntax Definitions
-- [Sidebar Enhancements](https://github.com/SideBarEnhancements-org/SideBarEnhancements)
-- [SublimeLinter](http://www.sublimelinter.com/en/latest/installation.html#installing-via-pc)
-- [Theme - Centurion](https://github.com/allanhortle/Centurion)
-- [Theme - Gravity](https://github.com/frankyonnetti/gravity-sublime-theme)
-- [Trailing Spaces](https://github.com/SublimeText/TrailingSpaces)
+-   [Babel](http://babeljs.io/) - Syntax Definitions
+-   [Bracket Highlighter](https://github.com/facelessuser/brackethighlighter)
+-   [JSX](https://github.com/allanhortle/JSX) - Syntax Definitions
+-   [Sidebar Enhancements](https://github.com/SideBarEnhancements-org/SideBarEnhancements)
+-   [SublimeLinter](http://www.sublimelinter.com/en/latest/installation.html#installing-via-pc)
+-   [Theme - Centurion](https://github.com/allanhortle/Centurion)
+-   [Theme - Gravity](https://github.com/frankyonnetti/gravity-sublime-theme)
+-   [Trailing Spaces](https://github.com/SublimeText/TrailingSpaces)
 
 #
 
@@ -327,7 +309,7 @@ session    required       pam_permit.so
 
 ### **macOS System Preferences**
 
-- Enable Firewall and FileVault
-- Set keyboard key repeat to fastest and delay to shortest
-- Set trackpad tracking speed to fastest
-- Disable trackpad tap to click
+-   Enable Firewall and FileVault
+-   Set keyboard key repeat to fastest and delay to shortest
+-   Set trackpad tracking speed to fastest
+-   Disable trackpad tap to click
