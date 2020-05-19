@@ -1,25 +1,54 @@
-// Place your key bindings in this file to overwrite the defaults
+// Place your key bindings in this file to override the defaults
 [
-  { "key": "f5",                    "command": "editor.action.sortLinesAscending" },
-  { "key": "shift+f5",              "command": "editor.action.sortLinesDescending" },
-  { "key": "cmd+j",                 "command": "editor.action.joinLines",                 "when": "editorTextFocus && !editorReadonly" },
-  { "key": "cmd+alt+/",             "command": "editor.action.blockComment",              "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+shift+\\",         "command": "editor.action.jumpToBracket",             "when": "editorTextFocus" },
+    { "key": "f5", "command": "editor.action.sortLinesAscending" },
+    { "key": "shift+f5", "command": "editor.action.sortLinesDescending" },
+    {
+        "key": "cmd+j",
+        "command": "editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+alt+/",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
 
-  { "key": "cmd+=",                 "command": "editor.action.fontZoomIn" },
-  { "key": "cmd+-",                 "command": "editor.action.fontZoomOut" },
-  { "key": "cmd+0",                 "command": "editor.action.fontZoomReset" },
+    { "key": "cmd+=", "command": "editor.action.fontZoomIn" },
+    { "key": "cmd+-", "command": "editor.action.fontZoomOut" },
+    { "key": "cmd+0", "command": "editor.action.fontZoomReset" },
 
-  { "key": "ctrl+j",                "command": "workbench.action.togglePanel" },
-  { "key": "ctrl+shift+j",          "command": "workbench.action.toggleMaximizedPanel" },
-  { "key": "ctrl+tab",              "command": "workbench.action.nextEditor" },
-  { "key": "ctrl+shift+tab",        "command": "workbench.action.previousEditor" },
-  { "key": "shift+cmd+\\",          "command": "workbench.action.joinTwoGroups" },
+    { "key": "ctrl+j", "command": "workbench.action.togglePanel" },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    { "key": "ctrl+tab", "command": "workbench.action.nextEditor" },
+    { "key": "ctrl+shift+tab", "command": "workbench.action.previousEditor" },
+    { "key": "shift+cmd+\\", "command": "workbench.action.joinTwoGroups" },
 
-  { "key": "ctrl+tab",              "command": "workbench.action.terminal.focusNext",     "when": "terminalFocus" },
-  { "key": "ctrl+shift+tab",        "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
 
-  { "key": "shift+cmd+=",           "command": "workbench.action.zoomIn" },
-  { "key": "shift+cmd+-",           "command": "workbench.action.zoomOut" },
-  { "key": "shift+cmd+0",           "command": "workbench.action.zoomReset" }
+    { "key": "shift+cmd+=", "command": "workbench.action.zoomIn" },
+    { "key": "shift+cmd+-", "command": "workbench.action.zoomOut" },
+    { "key": "shift+cmd+0", "command": "workbench.action.zoomReset" },
+
+    {
+        "key": "shift+alt+cmd+c",
+        "command": "copyRelativeFilePath",
+        "when": "editorFocus"
+    }
 ]
