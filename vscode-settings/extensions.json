@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "dotjoshjohnson.xml",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "jdinhlife.gruvbox",
+        "kumar-harsh.graphql-for-vscode",
+        "orta.vscode-jest",
+        "vscode-icons-team.vscode-icons",
+        "wmaurer.change-case"
+    ]
+}
