@@ -291,7 +291,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 ### **[Enable Touch ID for `sudo` in Terminal](https://gitlab.com/gnachman/iterm2/issues/7608)**
 
-1. Add `auth sufficient pam_tid.so` to `etc/pam.d/sudo`
+1. Add `auth sufficient pam_tid.so` to `/etc/pam.d/sudo`
 
 ```sh
 # sudo: auth account password session
