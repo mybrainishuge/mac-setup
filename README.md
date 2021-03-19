@@ -65,7 +65,8 @@ brew cask install 1password appcleaner docker dropbox firefox franz google-chrom
 ### **Install terminal utilities**
 
 ```sh
-$ brew install awscli git mysql node pyenv
+$ brew install awscli git mysql node pyenv fzf
+$ curl https://get.volta.sh | bash
 $ sudo easy_install pip # if necessary
 $ pip install --upgrade pip
 $ pip install --upgrade setuptools
