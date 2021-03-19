@@ -102,6 +102,9 @@ alias configz="code ~/.zshrc"
 alias dev='cd /Users/Richard/Documents/Development'
 alias reloadz=". ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
+alias pg:start="brew services start postgresql"
+alias pg:stop="brew services stop postgresql"
+alias python=/usr/local/bin/python3
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -132,6 +135,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # export GITHUB_TOKEN="FILL_ME_IN"
 # export SLACK_ID="FILL_ME_IN"
+# export INTROSPECTION_AUTH_TOKEN="FILL_ME_IN"
 
 bindkey \^U backward-kill-line
 
@@ -158,3 +162,9 @@ bindkey \^U backward-kill-line
 #     # update graphql types
 #     bin/gql
 # }
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
