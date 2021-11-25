@@ -8,7 +8,8 @@
 -   [Install desktop applications](#install-desktop-applications)
     -   [Fix Sequel Pro icon](#fix-sequel-pro-icon)
 -   [Install terminal utilities](#install-terminal-utilities)
--   [Setup `git-open` with ZSH](#setup-git-open-with-zsh)
+-   [~~Setup `git-open` with ZSH~~](#setup-git-open-with-zsh)
+-   [Configure `fzf-tab` and `zsh-autosuggestions`](#configure-fzf-tab-and-zsh-autosuggestions)
 -   [Add `pyenv` plugin to ZSH](#add-pyenv-plugin-to-zsh)
 -   [Fix zlib error when installing Python versions using `pyenv`](#fix-zlib-error-when-installing-python-versions-using-pyenv)
 -   [Set directory ownership for `n`](#set-directory-ownership-for-n)
@@ -27,6 +28,8 @@
 -   [Configure iTerm](#configure-iterm)
 -   [Enable Touch ID for `sudo` in Terminal](#enable-touch-id-for-sudo-in-terminal)
 -   [macOS System Preferences](#macos-system-preferences)
+-   [Troubleshooting](#troubleshooting)
+    -   [gyp: No Xcode or CLT version detected!](#gyp-no-xcode-or-clt-version-detected)
 
 #
 
@@ -65,7 +68,7 @@ brew cask install 1password appcleaner docker dropbox firefox franz google-chrom
 ### **Install terminal utilities**
 
 ```sh
-$ brew install awscli git mysql node pyenv fzf
+$ brew install awscli git mysql node pyenv fzf gh
 $ curl https://get.volta.sh | bash
 $ sudo easy_install pip # if necessary
 $ pip install --upgrade pip
@@ -74,10 +77,19 @@ $ pip install --upgrade setuptools
 
 #
 
-### **[Setup git-open with ZSH](https://github.com/paulirish/git-open#oh-my-zsh)**
+### **[~~Setup git-open with ZSH~~](https://github.com/paulirish/git-open#oh-my-zsh)**
+
+\*Replace with [`gh` cli](https://cli.github.com/)
 
 1. `git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open`
 2. Add `git-open` to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... git-open)`
+
+#
+
+### **Configure `fzf-tab` and `zsh-autosuggestions`**
+
+-   [fzf-tab](https://github.com/Aloxaf/fzf-tab)
+-   [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 #
 
@@ -182,7 +194,9 @@ $ git mergetool -y
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Extensions view keyboard shortcut: `command` + `shift` + `x`_
 
+-   [axe Accessibility Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
 -   [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+-   [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 -   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 -   [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 -   [GraphQL for VSCode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode)
@@ -190,6 +204,7 @@ $ git mergetool -y
 -   [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 -   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 -   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+-   [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 -   [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
 #
@@ -314,3 +329,33 @@ session    required       pam_permit.so
 -   Set keyboard key repeat to fastest and delay to shortest
 -   Set trackpad tracking speed to fastest
 -   Disable trackpad tap to click
+
+#
+
+## Troubleshooting
+
+### gyp: No Xcode or CLT version detected!
+
+```sh
+gyp: No Xcode or CLT version detected!
+```
+
+If you get the above error when running `npm install`, reinstall Xcode command line tools:
+
+1. Get the current path of Xcode command line tools
+
+    ```sh
+    xcode-select --print-path
+    ```
+
+2. Remove the path printed by the previous command
+
+    ```sh
+    sudo rm -rf /Library/Developer/CommandLineTools
+    ```
+
+3. Reinstall Xcode command line tools
+
+    ```sh
+    xcode-select --install
+    ```
