@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/richard/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -23,14 +23,13 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -45,8 +44,9 @@ DISABLE_UPDATE_PROMPT="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -70,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-open fzf-tab zsh-autosuggestions)
+plugins=(git fzf-tab zsh-autosuggestions fzf fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,71 +102,63 @@ source $ZSH/oh-my-zsh.sh
 
 alias configz="code ~/.zshrc"
 alias dev="cd $HOME/Documents/Development"
-alias reloadz=". ~/.zshrc"
+alias reloadz=". ~/.zshrc && exec $SHELL"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias pg:start="brew services start postgresql"
 alias pg:stop="brew services stop postgresql"
-alias python=/usr/local/bin/python3
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$HOME/Documents/Development/infra/devolate/perc:$PATH"
 
-# extends kubectl plugin
-alias kcgc='k config get-contexts'
+export AWS_ACCESS_KEY_ID="FILL_ME_IN"
+export AWS_SECRET_ACCESS_KEY="FILL_ME_IN"
+export AWS_DEFAULT_REGION="us-west-1"
 
-# Aliases for maintenance scripts
-alias repairperms='cd /usr/local && sudo chown -R $(whoami) bin etc include lib share var Frameworks; cd -; reloadz'
-alias updatenpm='~; n latest; npm update; npm update -g; npm i -g npm-check; npm cache verify; npm-check -g -u; cd -; reloadz'
-alias updatebrew='~; brew update; brew update; brew doctor; brew upgrade; brew link --overwrite node; brew cleanup; brew prune; cd -; reloadz'
-alias dnh='cd /usr/local/include/node; find . -name "*.h" -type f -delete; cd -; reloadz'
-alias updatecask='~; brew cask doctor; brew cask outdated | xargs brew cask reinstall; brew cleanup; cd -; reloadz'
-alias updatepip='~; pip install --upgrade pip; pip install --upgrade --user awsebcli; cd -; reloadz'
-alias maint='repairperms; upgrade_oh_my_zsh; updatenpm; updatebrew; dnh; updatecask; updatepip; softwareupdate -ia'
-# If receive npm errors, try updating npm specifically with these
-# npm -g install npm@next; npm install npm@latest -g;
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/devolate:$HOME/Documents/Development/infra/devolate/.cache/kubeconfig:$HOME/.kube/kops-testolate/kube-config-viewer.yaml:$HOME/.kube/kops-prclt-uw1/kube-config-viewer.yaml:$HOME/.kube/metalate/kube-config-viewer.yaml:$HOME/.kube/autolate/kube-config-viewer.yaml"
 
-# GitHub personal access token (if 2FA is enabled)
-# export GHAT=FILL_ME_IN
+export JFROG_USERNAME="FILL_ME_IN"
+export JFROG_API_KEY="FILL_ME_IN"
+export JFROG_AUTH_TOKEN="FILL_ME_IN"
+export JFROG_TOKEN="FILL_ME_IN"
+export PIP_EXTRA_INDEX_URL="https://$JFROG_USERNAME:$JFROG_API_KEY@seismic.jfrog.io/artifactory/api/pypi/pypi-local/simple"
 
-# export NPM_TOKEN="FILL_ME_IN"
+export GITHUB_TOKEN="FILL_ME_IN"
+export SLACK_ID="FILL_ME_IN"
+export INTROSPECTION_AUTH_TOKEN="FILL_ME_IN"
 
-# PostgreSQL
-fpath=(/usr/local/share/zsh-completions $fpath)
+export AUTH_ORIGIN="https://auth-qa.seismic-dev.com" # contentplanningqa
+export WMS_AUTH_TOKEN="FILL_ME_IN"
+export WMS_USER_ID="ys6Sdu2U06UzncSvthK5wQ" # contentplanningqa
+export WMS_CLIENT_ID="FILL_ME_IN"
+export WMS_CLIENT_SECRET="FILL_ME_IN" # contentplanningqa
+export WMS_DEV_CLIENT_SECRET="FILL_ME_IN"
+export WMS_QA_CLIENT_SECRET="FILL_ME_IN"
+export WMS_UAT_CLIENT_SECRET="FILL_ME_IN"
+export WMS_DEV_TEST_CLIENT_ID="FILL_ME_IN"
+export WMS_DEV_TEST_CLIENT_SECRET="FILL_ME_IN"
+export WMS_MATRIX_CERT_FILE="./env/matrix_dev.pfx"
+export WMS_MATRIX_CERT_PASSPHRASE="FILL_ME_IN"
+export NEWRELIC_LICENSE_KEY="FILL_ME_IN"
 
-# export AWS_ACCESS_KEY_ID="FILL_ME_IN"
-# export AWS_SECRET_ACCESS_KEY="FILL_ME_IN"
+export MATRIX_PASSPHRASE="FILL_ME_IN"
+export MATRIX_PFX=$(openssl base64 -in /Users/$USER/Documents/Development/matrix-client-cert-v2/matrix-client-cert-v2.pfx)
 
-# export GITHUB_TOKEN="FILL_ME_IN"
-# export SLACK_ID="FILL_ME_IN"
-# export INTROSPECTION_AUTH_TOKEN="FILL_ME_IN"
+export CYPRESS_CLIENT_ID="FILL_ME_IN"
+export CYPRESS_USER_NAME="FILL_ME_IN"
+export CYPRESS_USER_PASSWORD="FILL_ME_IN"
+
+export ROSETTA_HEALTHCHECK_EMAIL="FILL_ME_IN"
+export ROSETTA_HEALTHCHECK_PASSWORD="FILL_ME_IN"
+export ROSETTA_HEALTHCHECK_TENANT_ID="FILL_ME_IN"
 
 bindkey \^U backward-kill-line
-
-# rebases and builds current branch with latest master
-# rbm () {
-#     # remember current git branch
-#     local branch=$(current_branch)
-#     # stash any unsaved changes
-#     git stash
-#     # checkout master
-#     gcm
-#     # fetch origin
-#     gfo
-#     # pull master
-#     gl
-#     # re-checkout current branch
-#     gco $branch
-#     # rebase master
-#     grb master
-#     # pop stashed changes
-#     gstp
-#     # build
-#     make
-#     # update graphql types
-#     bin/gql
-# }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export FZF_CTRL_T_OPTS="--height '100%' --preview 'bat --color=always --style=header,numbers --line-range :500 {}'"export VOLTA_HOME="$HOME/.volta"
 # export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.10/bin:$PATH"
