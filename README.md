@@ -142,10 +142,19 @@ $ git config --global -e
 ```
 
 ```sh
+[user]
+	name = <YOUR_NAME>
+	email = <YOUR_EMAIL>
+[credential]
+	helper = osxkeychain
+[core]
+	editor = code --wait
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
+[pull]
+	rebase = false
 ```
 
 #
